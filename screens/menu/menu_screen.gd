@@ -4,7 +4,7 @@ onready var _display = $HomeDisplay
 
 
 func _ready():
-	var db = CardEngine.db().get_database("main")
+	var db = CardEngine.db().get_database("BT1")
 	var q = Query.new()
 	var store = CardPile.new()
 

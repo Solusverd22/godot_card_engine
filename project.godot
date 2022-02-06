@@ -386,7 +386,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="CardEngine"
+config/name="BTCardGame"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
@@ -412,7 +412,7 @@ window/size/height=720
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/cardengine/plugin.cfg", "res://addons/godot-plugin-refresher/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/cardengine/plugin.cfg" )
 
 [gui]
 

@@ -12,7 +12,7 @@ onready var _pile3 = $Board/Pile3
 
 
 func _ready() -> void:
-	var db = CardEngine.db().get_database("main")
+	var db = CardEngine.db().get_database("BT1")
 
 	_hand_store.populate_all(db)
 	_hand_store.keep(8)

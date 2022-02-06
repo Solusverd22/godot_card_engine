@@ -1,0 +1,52 @@
+[meta]
+
+id="BT1"
+name="BT BOOSTER PACK 1"
+
+[cards]
+
+card0={
+"categories": {
+"rarity": "common",
+"type": "Gorber"
+},
+"texts": {
+"desc": "Gorber cannot be killed.",
+"name": "Gorber"
+},
+"values": {
+"atk": 1,
+"hp": 1,
+"mana": 1
+}
+}
+card1={
+"categories": {
+"rarity": "common",
+"type": "Gorber"
+},
+"texts": {
+"desc": "Gorber cannot be killed.",
+"name": "Gorber"
+},
+"values": {
+"atk": 1,
+"hp": 1,
+"mana": 1
+}
+}
+card2={
+"categories": {
+"rarity": "common",
+"type": "Gorber"
+},
+"texts": {
+"desc": "Gorber cannot be killed.",
+"name": "Gorber"
+},
+"values": {
+"atk": 1,
+"hp": 1,
+"mana": 1
+}
+}

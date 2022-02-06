@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://screens/menu/menu_screen.gd" type="Script" id=1]
 [ext_resource path="res://screens/menu/background.png" type="Texture" id=2]
 [ext_resource path="res://widgets/menu_button/menu_button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://containers/home_display/home_display.tscn" type="PackedScene" id=4]
+[ext_resource path="res://cards/BTCard/BTCard.tscn" type="PackedScene" id=5]
 
 [node name="MenuScreen" type="Control"]
 anchor_right = 1.0
@@ -38,29 +39,34 @@ __meta__ = {
 
 [node name="NewGameBtn" parent="ButtonsLayout" instance=ExtResource( 3 )]
 margin_right = 400.0
+texture_click_mask = null
 button_text = "New Game"
 
 [node name="BoardGameBtn" parent="ButtonsLayout" instance=ExtResource( 3 )]
 margin_top = 112.0
 margin_right = 400.0
 margin_bottom = 220.0
+texture_click_mask = null
 button_text = "Board Demo"
 
 [node name="BuilderBtn" parent="ButtonsLayout" instance=ExtResource( 3 )]
 margin_top = 224.0
 margin_right = 400.0
 margin_bottom = 332.0
+texture_click_mask = null
 button_text = "Deck Builder"
 
 [node name="QuitBtn" parent="ButtonsLayout" instance=ExtResource( 3 )]
 margin_top = 336.0
 margin_right = 400.0
 margin_bottom = 444.0
+texture_click_mask = null
 button_text = "Quit"
 
 [node name="HomeDisplay" parent="." instance=ExtResource( 4 )]
 margin_left = 20.0
 margin_top = 20.0
+card_visual = ExtResource( 5 )
 
 [connection signal="pressed" from="ButtonsLayout/NewGameBtn" to="." method="_on_NewGameBtn_pressed"]
 [connection signal="pressed" from="ButtonsLayout/BoardGameBtn" to="." method="_on_BoardGameBtn_pressed"]
