@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://widgets/menu_button/menu_button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://containers/home_display/home_display.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://screens/multiplayer/lobby_screen.gd" type="Script" id=4]
 [ext_resource path="res://widgets/settings_button/SettingsButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fonts/font40.res" type="DynamicFont" id=6]
+[ext_resource path="res://widgets/join_player_ui/joinPlayerUI.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFontData" id=2]
 font_path = "res://fonts/ArchivoNarrow-Bold.ttf"
@@ -82,6 +83,46 @@ tracks/5/keys = {
 "points": PoolRealArray( 640, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Background/PlayerList:rect_scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Background/PlayerList:rect_scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Background/PlayerList2:rect_scale:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("Background/PlayerList2:rect_scale:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "lobbyin"
@@ -149,6 +190,46 @@ tracks/5/keys = {
 "points": PoolRealArray( 360, -0.25, 0, 0.25, 0, 130, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0.3, 0.6 )
 }
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Background/PlayerList:rect_scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.3, 0.6 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Background/PlayerList:rect_scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.3, 0.6 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Background/PlayerList2:rect_scale:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.3, 0.6 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("Background/PlayerList2:rect_scale:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.3, 0.6 )
+}
 
 [node name="LobbyScreen" type="Control"]
 anchor_right = 1.0
@@ -163,10 +244,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 640.0
-margin_top = 360.0
-margin_right = 680.0
-margin_bottom = 400.0
+margin_right = 40.0
+margin_bottom = 39.9999
 rect_rotation = 29.3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -213,7 +292,7 @@ margin_left = -1445.61
 margin_top = 345.191
 margin_right = 1554.39
 margin_bottom = 375.191
-rect_rotation = -29.4
+rect_rotation = -29.3
 rect_pivot_offset = Vector2( 750, 15 )
 color = Color( 0.909804, 0.909804, 0.909804, 1 )
 __meta__ = {
@@ -254,15 +333,55 @@ rect_rotation = -29.3
 texture_click_mask = null
 button_text = "Leave"
 
+[node name="PlayerList" type="VBoxContainer" parent="Background"]
+margin_left = -483.377
+margin_top = 303.366
+margin_right = 26.6232
+margin_bottom = 747.366
+rect_rotation = -29.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="joinPlayerUI" type="HBoxContainer" parent="Background/PlayerList"]
+margin_right = 510.0
+margin_bottom = 108.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerNameLBL" type="Label" parent="Background/PlayerList/joinPlayerUI"]
+margin_top = 30.0
+margin_right = 158.0
+margin_bottom = 77.0
+custom_fonts/font = ExtResource( 6 )
+text = "Username"
+
+[node name="MenuButton" parent="Background/PlayerList/joinPlayerUI" instance=ExtResource( 1 )]
+margin_left = 162.0
+margin_right = 510.0
+texture_click_mask = null
+
+[node name="PlayerList2" type="VBoxContainer" parent="Background"]
+margin_left = 42.0983
+margin_top = 9.62976
+margin_right = 552.098
+margin_bottom = 453.63
+rect_rotation = -29.3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ButtonsLayout" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 3360.0
-margin_top = 138.0
-margin_right = 3760.0
-margin_bottom = 581.999
+margin_left = 4000.0
+margin_top = -222.0
+margin_right = 4400.0
+margin_bottom = 222.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -14,3 +14,4 @@ func _on_SettingsButton_pressed():
 
 func _on_IPBtn_pressed():
 	Networking.SERVERIP = $Panel/ServerIP/IPTXT.text
+	print("server host ip set to: "+$Panel/ServerIP/IPTXT.text)

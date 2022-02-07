@@ -17,6 +17,8 @@ func _ready():
 	store.keep(3)
 
 	_display.set_store(store)
+	yield(get_tree().create_timer(0.3), "timeout")
+	$Background/Title.text = Networking.servername+" "+$Background/Title.text
 
 func _on_pingBtn_pressed():
 	# warning-ignore-all:unsafe_property_access

@@ -6,6 +6,7 @@ var MAX_PLAYERS = 10
 var ID = 0
 var SERVERIP = "146.90.82.179"
 var username = "John Longballs"
+remote var servername = ""
 
 func _ready():
 	#warning-ignore-all:return_value_discarded
@@ -28,10 +29,12 @@ func join_server() -> bool:
 	get_tree().network_peer = peer
 	print("connection success")
 	ID = peer.get_unique_id()
+	servername = peer.get_var()
 	return true
 
 func _peer_connected(id):
 	print("peer connected: "+str(id))
+	rset_id(id,"servername",username)
 func _peer_disconnected(id):
 	print("peer disconnected: "+str(id))
 
@@ -40,3 +43,6 @@ func close_connection():
 
 remote func ping(message):
 	print(message)
+
+remote func get_name():
+	return username
