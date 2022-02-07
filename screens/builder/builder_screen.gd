@@ -27,7 +27,7 @@ onready var _use_btn = $BuilderLayout/DeckBg/CardDrop/DeckLayout/UseBtn
 
 
 func _ready() -> void:
-	var db = CardEngine.db().get_database("main")
+	var db = CardEngine.db().get_database("BT1")
 
 	_store.populate_all(db)
 	_container.set_store(_store)
@@ -70,7 +70,7 @@ func _apply_filters() -> void:
 	var sorting: Dictionary = {}
 
 	if _rarity_sort.pressed:
-		sorting["category:rarity"] = ["common", "uncommon", "rare", "mythic_rare"]
+		sorting["category:rarity"] = ["Free", "Common", "Epic", "Rare","Legendary"]
 
 	if _mana_sort.pressed:
 		sorting["value:mana"] = true
@@ -86,7 +86,7 @@ func _apply_filters() -> void:
 
 
 func _update_filters() -> void:
-	_update_class()
+	#_update_class()
 	_update_rarity()
 	_update_values()
 	_update_texts()

@@ -5,6 +5,134 @@ name="BT BOOSTER PACK 1"
 
 [cards]
 
+card8={
+"categories": {
+"rarity": "Rare",
+"type": "Elemental"
+},
+"texts": {
+"desc": "SMOOTH.
+When approached, question
+opponents motives.
+
+CANNOT BE FROZEN.",
+"name": "Flowain"
+},
+"values": {
+"atk": 8,
+"hp": 4,
+"mana": 4
+}
+}
+card7={
+"categories": {
+"rarity": "Epic",
+"type": "Mythical"
+},
+"texts": {
+"desc": "Summons the Elevated one. All life PERISHES.",
+"name": "The Elevated One"
+},
+"values": {
+"mana": -1
+}
+}
+card6={
+"categories": {
+"rarity": "Free",
+"type": "Epic"
+},
+"texts": {
+"desc": "BATTLECRY: Remove the depression status from all cards. Every turn play 2 HAPPY LITTLE TREES.",
+"name": "Ross Bob"
+},
+"values": {
+"attk": 0,
+"hp": 6,
+"mana": 4
+}
+}
+card5={
+"categories": {
+"rarity": "Common",
+"type": "Chezzler"
+},
+"texts": {
+"desc": "BATTLECRY: Hit 'em with the PEACE OUT. Slimmy Jim holds so still, he becomes undetectable for 4 turns. 
+DEATHRATTLE: Add THICK JOHN to your opponents hand.",
+"name": "Slimmy Jim"
+},
+"values": {
+"attk": 5,
+"hp": 1,
+"mana": 3
+}
+}
+card4={
+"categories": {
+"rarity": "Common",
+"type": "Herbal"
+},
+"texts": {
+"desc": "EVASIVE
+At the start of each round ZOOT UP once.
+For each ZOOT GAIN +1/+1 stacking 5 times. After 5 stacks summon TORQUED KINGPIN.",
+"name": "Zoinked Mobster"
+},
+"values": {
+"attk": 1,
+"hp": 1,
+"mana": 1
+}
+}
+card3={
+"categories": {
+"rarity": "Common",
+"type": "Mech"
+},
+"texts": {
+"desc": "RUSH. For every ZOOT inhaled DOUBLE your attack damage.
+
+DEATHRATTLE: Get absolutely TORQUED, gain +6/+5.",
+"name": "Defias Rider"
+},
+"values": {
+"attk": 2,
+"hp": 1,
+"mana": 1
+}
+}
+card2={
+"categories": {
+"rarity": "Legendary",
+"type": "Mythical"
+},
+"texts": {
+"desc": "He who wields this card gains control over ALL MATTER in the BEETEE OMNIVERSE and gains ADMIN status over life.
+
+Bonus effect: grants INEVITABILITY.",
+"name": "BeeTee Overlord"
+},
+"values": {
+"mana": -1
+}
+}
+card1={
+"categories": {
+"golden": "yes",
+"rarity": "Legendary",
+"type": "Emperor"
+},
+"texts": {
+"desc": "INSPIRE
+BATTLECRY: Rallies all minions in play. For every ally and enemy minion GAIN +5/+5.
+This card CANNOT be defeated.",
+"name": "Civilisation Leader"
+},
+"values": {
+"mana": -1
+}
+}
 card0={
 "categories": {
 "rarity": "common",
@@ -15,37 +143,7 @@ card0={
 "name": "Gorber"
 },
 "values": {
-"atk": 1,
-"hp": 1,
-"mana": 1
-}
-}
-card1={
-"categories": {
-"rarity": "common",
-"type": "Gorber"
-},
-"texts": {
-"desc": "Gorber cannot be killed.",
-"name": "Gorber"
-},
-"values": {
-"atk": 1,
-"hp": 1,
-"mana": 1
-}
-}
-card2={
-"categories": {
-"rarity": "common",
-"type": "Gorber"
-},
-"texts": {
-"desc": "Gorber cannot be killed.",
-"name": "Gorber"
-},
-"values": {
-"atk": 1,
+"attk": 1,
 "hp": 1,
 "mana": 1
 }

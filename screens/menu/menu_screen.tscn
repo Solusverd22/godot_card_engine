@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://screens/menu/menu_screen.gd" type="Script" id=1]
 [ext_resource path="res://screens/menu/background.png" type="Texture" id=2]
 [ext_resource path="res://widgets/menu_button/menu_button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://containers/home_display/home_display.tscn" type="PackedScene" id=4]
 [ext_resource path="res://cards/BTCard/BTCard.tscn" type="PackedScene" id=5]
+[ext_resource path="res://widgets/settings_button/SettingsButton.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://fonts/ArchivoNarrow-Bold.ttf"
@@ -165,6 +166,8 @@ button_text = "Quit"
 margin_left = 20.0
 margin_top = 20.0
 card_visual = ExtResource( 5 )
+
+[node name="SettingsButton" parent="." instance=ExtResource( 6 )]
 
 [connection signal="pressed" from="ButtonsLayout/LobbyBtn" to="." method="_on_LobbyBtn_pressed"]
 [connection signal="pressed" from="ButtonsLayout/BoardGameBtn" to="." method="_on_BoardGameBtn_pressed"]

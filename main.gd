@@ -5,12 +5,16 @@ var _screens = {
 	"builder": preload("res://screens/builder/builder_screen.tscn"),
 	"game": preload("res://screens/game/game_screen.tscn"),
 	"board": preload("res://screens/board/board_screen.tscn"),
-	"lobby": preload("res://screens/multiplayer/lobby.tscn")
+	"multiplayer": preload("res://screens/multiplayer/multiplayer_screen.tscn"),
+	"host": preload("res://screens/multiplayer/host_screen.tscn"),
+	"lobby": preload("res://screens/multiplayer/lobby_screen.tscn")
 }
 
 onready var _screen_layer = $ScreenLayer
 
 func _ready():
+	if OS.has_environment("USERNAME"):
+		Networking.username = OS.get_environment("USERNAME")
 	randomize()
 	CardEngine.clean()
 	CardEngine.setup()

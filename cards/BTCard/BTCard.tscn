@@ -55,7 +55,6 @@ texture = ExtResource( 6 )
 texture = ExtResource( 7 )
 
 [node name="Front" type="Node2D" parent="AnimContainer"]
-visible = false
 
 [node name="Background" type="Sprite" parent="AnimContainer/Front"]
 texture = ExtResource( 8 )
@@ -161,7 +160,29 @@ __meta__ = {
 position = Vector2( 0, -150 )
 texture = ExtResource( 11 )
 
+[node name="TypeBackground" type="Sprite" parent="AnimContainer/Front"]
+position = Vector2( 0, 241 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 9 )
+
+[node name="Type" type="Label" parent="AnimContainer/Front/TypeBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -151.0
+margin_top = -24.0
+margin_right = -195.0
+margin_bottom = -67.0
+custom_fonts/font = SubResource( 1 )
+text = "Card Type"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Back" type="Node2D" parent="AnimContainer"]
+visible = false
 
 [node name="Background" type="Sprite" parent="AnimContainer/Back"]
 texture = ExtResource( 5 )

@@ -1,25 +1,34 @@
 extends AbstractScreen
 
-onready var _display = $HomeDisplay
-onready var anim = $AnimationPlayer
-onready var iptxtbox = $ButtonsLayout/dummyBtn/IPTxtBox
-
-var PORT = 8420
-var MAX_PLAYERS = 10
-var peer = null
+onready var players_txt = $ButtonsLayout/players
+var playerids = []
 
 func _ready():
 	#warning-ignore-all:return_value_discarded
 	get_tree().connect("network_peer_disconnected", self, "_peer_disconnected")
 	get_tree().connect("network_peer_connected", self, "_peer_connected")
-	var db = CardEngine.db().get_database("BT1")
-	var q = Query.new()
-	var store = CardPile.new()
+	Networking.start_host()
 
-	var cards = q.from(["rarity:common"]).execute(db)
+func _peer_connected(id):
+	add_player(id)
+func _peer_disconnected(id):
+	remove_player(id)
 
-	store.populate(db, cards)
-	store.shuffle()
-	store.keep(3)
+func _on_BackBtn_pressed():
+	Networking.close_connection()
+	$AnimationPlayer.play_backwards("lobbyin")
+	yield(get_tree().create_timer(0.8), "timeout")
+	emit_signal("next_screen","menu")
 
-	_display.set_store(store)
+func add_player(id):
+	playerids.append(id)
+	write_players()
+
+func remove_player(id):
+	playerids.erase(id)
+	write_players()
+
+func write_players():
+	players_txt.text = ""
+	for pid in playerids:
+		players_txt.text = (players_txt.text + "\n" + str(pid))

@@ -4,6 +4,8 @@ var peer = null
 var PORT = 8420
 var MAX_PLAYERS = 10
 var ID = 0
+var SERVERIP = "146.90.82.179"
+var username = "John Longballs"
 
 func _ready():
 	#warning-ignore-all:return_value_discarded
@@ -18,9 +20,9 @@ func start_host() -> void:
 	ID = peer.get_unique_id()
 	
 
-func join_server(ip: String) -> bool:
+func join_server() -> bool:
 	peer = NetworkedMultiplayerENet.new()
-	if peer.create_client(ip, PORT) != OK: 
+	if peer.create_client(SERVERIP, PORT) != OK: 
 		print("connection failed")
 		return false
 	get_tree().network_peer = peer
@@ -32,6 +34,9 @@ func _peer_connected(id):
 	print("peer connected: "+str(id))
 func _peer_disconnected(id):
 	print("peer disconnected: "+str(id))
+
+func close_connection():
+	peer.close_connection()
 
 remote func ping(message):
 	print(message)

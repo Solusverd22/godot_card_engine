@@ -10,6 +10,8 @@ onready var _rare = $AnimContainer/Front/RarityGroup/Rare
 onready var _legendary = $AnimContainer/Front/RarityGroup/Legendary
 onready var _card_id = $AnimContainer/Front/CardId
 onready var _card_art = $AnimContainer/Front/CardArt
+onready var _type = $AnimContainer/Front/TypeBackground/Type
+
 
 
 func _update_data(data: CardData, default: CardData = null) -> void:
@@ -22,13 +24,16 @@ func _update_data(data: CardData, default: CardData = null) -> void:
 
 	if data.has_text("desc"):
 		_desc.text = data.get_text("desc")
+	
+	if data.has_meta_category("type"):
+		_type.text = data.get_category("type")
 
 	if data.has_value("mana"):
 		var val = data.get_value("mana")
 		if val >= 0:
 			_cost.text = "%d" % val
 		else:
-			_cost.text = "X"
+			_cost.text = ""
 
 	if default != null:
 		var val = data.get_value("mana")
@@ -50,13 +55,13 @@ func _update_picture(data: CardData) -> void:
 		child.visible = false
 
 	if data.has_meta_category("rarity"):
-		if data.get_category("rarity") == "common":
+		if data.get_category("rarity") == "Common":
 			_common.visible = true
-		elif data.get_category("rarity") == "rare":
+		elif data.get_category("rarity") == "Rare":
 			_rare.visible = true
-		elif data.get_category("rarity") == "epic":
+		elif data.get_category("rarity") == "Epic":
 			_epic.visible = true
-		elif data.get_category("rarity") == "legendary":
+		elif data.get_category("rarity") == "Legendary":
 			_legendary.visible = true
 
 
