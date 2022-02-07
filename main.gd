@@ -8,9 +8,7 @@ var _screens = {
 	"lobby": preload("res://screens/multiplayer/lobby.tscn")
 }
 
-
 onready var _screen_layer = $ScreenLayer
-
 
 func _ready():
 	randomize()
@@ -18,12 +16,10 @@ func _ready():
 	CardEngine.setup()
 	change_screen("menu")
 
-
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and not event.is_pressed():
 		if CardEngine.general().is_dragging():
 			CardEngine.general().stop_drag()
-
 
 func change_screen(screen_name: String) -> void:
 	if !_screens.has(screen_name): return
@@ -35,3 +31,4 @@ func change_screen(screen_name: String) -> void:
 	var screen = _screens[screen_name].instance()
 	screen.connect("next_screen", self, "change_screen")
 	_screen_layer.add_child(screen)
+

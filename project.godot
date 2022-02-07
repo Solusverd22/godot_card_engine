@@ -396,6 +396,7 @@ Utils="*res://addons/cardengine/core/utils.gd"
 CardEngine="*res://addons/cardengine/core/card_engine_instance.gd"
 Gameplay="*res://gameplay.gd"
 UserStores="*res://user_data/ud_stores.gd"
+Networking="*res://networking.gd"
 
 [debug]
 
