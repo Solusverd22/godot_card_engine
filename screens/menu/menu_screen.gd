@@ -17,17 +17,14 @@ func _ready():
 	_display.set_store(store)
 
 
-func _on_NewGameBtn_pressed() -> void:
-	emit_signal("next_screen", "game")
-
+func _on_LobbyBtn_pressed():
+	emit_signal("next_screen", "lobby")
 
 func _on_BoardGameBtn_pressed() -> void:
 	emit_signal("next_screen", "board")
 
-
 func _on_BuilderBtn_pressed() -> void:
 	emit_signal("next_screen", "builder")
 
-
-func _on_QuitBtn_pressed() -> void:
+func _on_QuitBtn_pressed():
 	get_tree().quit()

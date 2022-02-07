@@ -8,7 +8,6 @@ onready var _common = $AnimContainer/Front/RarityGroup/Common
 onready var _epic = $AnimContainer/Front/RarityGroup/Epic
 onready var _rare = $AnimContainer/Front/RarityGroup/Rare
 onready var _legendary = $AnimContainer/Front/RarityGroup/Legendary
-onready var _basic_land = $AnimContainer/Front/PictureGroup/BasicLand
 onready var _card_id = $AnimContainer/Front/CardId
 onready var _card_art = $AnimContainer/Front/CardArt
 
@@ -59,9 +58,6 @@ func _update_picture(data: CardData) -> void:
 			_epic.visible = true
 		elif data.get_category("rarity") == "legendary":
 			_legendary.visible = true
-	elif data.has_meta_category("class"):
-		if data.get_category("class") == "basic_land":
-			_basic_land.visible = true
 
 
 func _on_NormalCard_instance_changed() -> void:
