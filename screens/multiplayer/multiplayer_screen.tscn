@@ -193,7 +193,7 @@ margin_bottom = 291.691
 rect_rotation = -29.3
 custom_colors/font_color = Color( 0.909804, 0.909804, 0.909804, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "BARFSTONE
+text = "MULTIPLAYER
 "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -207,11 +207,38 @@ margin_bottom = 396.691
 rect_rotation = -29.3
 custom_colors/font_color = Color( 0.909804, 0.909804, 0.909804, 1 )
 custom_fonts/font = SubResource( 4 )
-text = "A BT GAMING 
-EXPERIENCE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="IPHBOX" type="HBoxContainer" parent="."]
+margin_left = 858.931
+margin_top = 84.944
+margin_right = 1258.93
+margin_bottom = 141.944
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IPLBL" type="Label" parent="IPHBOX"]
+margin_top = 5.0
+margin_right = 42.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 6 )
+text = "IP:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IPTXT" type="LineEdit" parent="IPHBOX"]
+margin_left = 46.0
+margin_right = 272.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 6 )
+text = "146.90.82.179"
+max_length = 20
+expand_to_text_length = true
+placeholder_text = "John longballs"
 
 [node name="ButtonsLayout" type="VBoxContainer" parent="."]
 anchor_left = 0.5

@@ -130,12 +130,12 @@ This card CANNOT be defeated.",
 "name": "Civilisation Leader"
 },
 "values": {
-"mana": -1
+"mana": 9
 }
 }
 card0={
 "categories": {
-"rarity": "common",
+"rarity": "Common",
 "type": "Gorber"
 },
 "texts": {

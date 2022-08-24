@@ -14,7 +14,7 @@ onready var _screen_layer = $ScreenLayer
 
 func _ready():
 	if OS.has_environment("USERNAME"):
-		Networking.username = OS.get_environment("USERNAME")
+		Networking.info.username = OS.get_environment("USERNAME")
 	randomize()
 	CardEngine.clean()
 	CardEngine.setup()
